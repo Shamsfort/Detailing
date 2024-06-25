@@ -1,0 +1,117 @@
+@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    /* background-color: burlywood; */
+}
+
+.hero {
+    position: relative;
+    background-image: url('/public/images/trasferimento.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 900px;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+    padding: 40px;
+    overflow: hidden; /* Ensure content is clipped */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    transform: translateY(100%); /* Start position off-screen */
+    opacity: 0;
+    transition: transform 2s ease-out, opacity 1s ease-out;
+}
+
+.hero .container.loaded {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero h1 {
+    margin-right: 40px;
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 3rem;
+}
+
+/*? Dissolvenza */
+
+    .fade-margin{
+        position: relative;
+        background-color: black;
+        padding-bottom: 0px;
+        font-family: 'Cabin', sans-serif ;
+    }
+
+    .fade-margin::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50px; /* Altezza della dissolvenza */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
+    }
+
+/*? Dissolvenza */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 0px;
+    width: 100%;
+}
+
+.card {
+    flex: 1 1 0;
+    flex-wrap: nowrap;
+    border: none;
+    border-radius: 0px;
+    height: 400px;
+    background: url('/public/images/car-wash-expert-using-water-600nw-2287564617.webp')  no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    min-width: 200px; /* Ensures the cards don't get too small */
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.card-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
