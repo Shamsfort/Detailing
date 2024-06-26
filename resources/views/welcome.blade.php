@@ -1,15 +1,13 @@
 <x-layout>
-
-
-
     <div class="hero ">
         <div class="container">
             <p>Precisione e Professionalità!</p>
             <h1>SMARTWASH DETAILING</h1>
         </div>
     </div>
-<div class="fade-margin"></div>
+    <div class="fade-margin"></div>
     {{-- Card --}}
+    
     <div class="card-container">
         <div class="card">
             <div class="card-text">
@@ -36,7 +34,7 @@
             </div>
         </div>
     </div>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.hero .container').classList.add('loaded');

@@ -2,11 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 
-html, body{
+html, body {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
-    /* background-color: burlywood; */
 }
 
 .hero {
@@ -20,7 +18,7 @@ html, body{
     align-items: end;
     justify-content: flex-start;
     padding: 40px;
-    overflow: hidden; /* Ensure content is clipped */
+    overflow: hidden;
 }
 
 .hero::before {
@@ -36,9 +34,9 @@ html, body{
 .hero .container {
     position: relative;
     z-index: 1;
-    transform: translateY(100%); /* Start position off-screen */
+    transform: translateY(100%);
     opacity: 0;
-    transition: transform 2s ease-out, opacity 1s ease-out;
+    transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 .hero .container.loaded {
@@ -56,62 +54,126 @@ html, body{
     font-size: 3rem;
 }
 
-/*? Dissolvenza */
+/* Dissolvenza */
 
-    .fade-margin{
-        position: relative;
-        background-color: black;
-        padding-bottom: 0px;
-        font-family: 'Cabin', sans-serif ;
-    }
+.fade-margin {
+    position: relative;
+    background-color: black;
+    padding-bottom: 0px;
+    font-family: 'Cabin', sans-serif;
+}
 
-    .fade-margin::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 50px; /* Altezza della dissolvenza */
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
-    }
+.fade-margin::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
+}
 
-/*? Dissolvenza */
+/* Card Container */
 .card-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     padding: 0 0px;
+    height: 100%;
     width: 100%;
 }
 
+/* Card Styles */
 .card {
     flex: 1 1 0;
     flex-wrap: nowrap;
     border: none;
     border-radius: 0px;
     height: 400px;
-    background: url('/public/images/car-wash-expert-using-water-600nw-2287564617.webp')  no-repeat center center;
+    background: url('/public/images/car-wash-expert-using-water-600nw-2287564617.webp') no-repeat center center;
     background-size: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    min-width: 200px; /* Ensures the cards don't get too small */
+    min-width: 200px;
+    overflow: hidden; /* Ensure content is clipped */
+    transition: background 0.5s ease;
 }
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+
+.card1 {
+    flex: 1 1 0;
+    flex-wrap: nowrap;
+    border: none;
+    border-radius: 0px;
+    height: 400px;
+    background: url('/public/images/black-modern-car-closeup-on-600nw-693111667.webp') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    min-width: 200px;
+    overflow: hidden; /* Ensure content is clipped */
+    transition: background 0.5s ease;
+}
+
+.card:hover, .card1:hover {
+    /* background: rgba(0, 0, 0, 0.164); */
+    transition: background 0.5s ease;
 }
 
 .card-text {
     position: absolute;
     bottom: 20px;
     left: 20px;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-text, .card1:hover .card-text {
+    transform: translateY(-40px);
+}
+
+
+
+
+/* !MEDIA QUERY MOBILE */
+/* Stili per dispositivi mobili */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem; /* Riduci il padding della navbar per dispositivi mobili */
+    }
+    .navbar-brand {
+        font-size: 30px; /* Riduci la dimensione del testo del brand */
+        transform: none; /* Ripristina la trasformazione del brand */
+        animation: none; /* Disabilita l'animazione per il brand */
+    }
+    .navbar-toggler {
+        color: black; /* Cambia il colore dell'icona del toggler */
+    }
+    .navbar-nav.centered {
+        left: 50%; /* Centra il menu principale */
+        transform: translateX(-50%);
+        animation: none; /* Disabilita l'animazione del menu */
+    }
+    .dropdown-toggle {
+        transform: none; /* Ripristina la trasformazione della dropdown */
+        animation: none; /* Disabilita l'animazione della dropdown */
+    }
+    .button2 {
+        font-size: 1.5em; /* Riduci la dimensione del testo del pulsante */
+        --fs-size: 1.5em; /* Aggiorna anche questa variabile se necessario */
+    }
+    .card-container {
+        padding: 0 10px; /* Riduci il padding del container delle cards */
+    }
+    .hero h1{
+        font-size: 50px;
+    }
+
+    .hero p{
+        font-size: 20px;
+    }
 }
 
