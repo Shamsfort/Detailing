@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[PublicController::class, 'home'])->name('home');
+
+//Rotta per la pagina di preventivo
+Route::get('preventivo', [PublicController::class, 'preventivo'])->name('preventivo');
+
+//Rotta per invio dati
+Route::post('/preventivo/invio', [PublicController::class, 'preventivoSubmit'])->name('preventivo.submit');

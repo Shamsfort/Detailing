@@ -1,19 +1,145 @@
 @import 'bootstrap';
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 
 html, body {
     margin: 0;
     padding: 0;
+    /* NightColor */
+    background-color: #131112;
 }
+
+/* !LOADER */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0; /* Colore di sfondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Assicura che sia sopra ogni altro contenuto */
+    
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-icon {
+    width: 50px; /* Dimensioni dell'icona */
+    height: 50px;
+    border: 6px solid #3498db; /* Colore del bordo */
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s infinite linear; /* Animazione di rotazione */
+}
+
+.loader-text {
+    margin-top: 20px; /* Spazio tra l'icona e il testo */
+    font-size: 20px; /* Dimensione del testo */
+    color: #333; /* Colore del testo */
+}
+
+.spinner {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+}
+
+.spinner div {
+    position: absolute;
+    width: 50%;
+    height: 150%;
+    background: #000000;
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+    animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
+}
+
+.spinner div:nth-child(1) {
+    --delay: 0.1;
+    --rotation: 36;
+    --translation: 150;
+}
+
+.spinner div:nth-child(2) {
+    --delay: 0.2;
+    --rotation: 72;
+    --translation: 150;
+}
+
+.spinner div:nth-child(3) {
+    --delay: 0.3;
+    --rotation: 108;
+    --translation: 150;
+}
+
+.spinner div:nth-child(4) {
+    --delay: 0.4;
+    --rotation: 144;
+    --translation: 150;
+}
+
+.spinner div:nth-child(5) {
+    --delay: 0.5;
+    --rotation: 180;
+    --translation: 150;
+}
+
+.spinner div:nth-child(6) {
+    --delay: 0.6;
+    --rotation: 216;
+    --translation: 150;
+}
+
+.spinner div:nth-child(7) {
+    --delay: 0.7;
+    --rotation: 252;
+    --translation: 150;
+}
+
+.spinner div:nth-child(8) {
+    --delay: 0.8;
+    --rotation: 288;
+    --translation: 150;
+}
+
+.spinner div:nth-child(9) {
+    --delay: 0.9;
+    --rotation: 324;
+    --translation: 150;
+}
+
+.spinner div:nth-child(10) {
+    --delay: 1;
+    --rotation: 360;
+    --translation: 150;
+}
+
+@keyframes spinner-fzua35 {
+    0%, 10%, 20%, 30%, 50%, 60%, 70%, 80%, 90%, 100% {
+        transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
+    }
+    
+    50% {
+        transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1.5%));
+    }
+}
+/* !LOADER */
+
 
 .hero {
     position: relative;
-    background-image: url('/public/images/trasferimento.jpeg');
+    background-image: url('/public/images/erik-mclean-ZRns2R5azu0-unsplash.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    height: 900px;
+    height: 1000px;
     display: flex;
     align-items: end;
     justify-content: flex-start;
@@ -54,7 +180,6 @@ html, body {
     font-size: 3rem;
 }
 
-/* Dissolvenza */
 
 .fade-margin {
     position: relative;
@@ -73,7 +198,14 @@ html, body {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
 }
 
-/* Card Container */
+div.container2{
+    width: 100%;
+    margin-top: 0px!important;
+}
+
+
+
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -84,58 +216,125 @@ html, body {
     width: 100%;
 }
 
-/* Card Styles */
 .card {
+    background-position: center;
     flex: 1 1 0;
     flex-wrap: nowrap;
     border: none;
     border-radius: 0px;
     height: 400px;
-    background: url('/public/images/car-wash-expert-using-water-600nw-2287564617.webp') no-repeat center center;
-    background-size: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     min-width: 200px;
-    overflow: hidden; /* Ensure content is clipped */
+    overflow: hidden;
     transition: background 0.5s ease;
-}
-
-.card1 {
-    flex: 1 1 0;
-    flex-wrap: nowrap;
-    border: none;
-    border-radius: 0px;
-    height: 400px;
-    background: url('/public/images/black-modern-car-closeup-on-600nw-693111667.webp') no-repeat center center;
     background-size: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    min-width: 200px;
-    overflow: hidden; /* Ensure content is clipped */
-    transition: background 0.5s ease;
 }
 
-.card:hover, .card1:hover {
-    /* background: rgba(0, 0, 0, 0.164); */
-    transition: background 0.5s ease;
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.card-text {
+.card:hover::before {
+    opacity: 3;
+}
+
+.card .card-text {
     position: absolute;
     bottom: 20px;
     left: 20px;
     transition: transform 0.5s ease;
 }
 
-.card:hover .card-text, .card1:hover .card-text {
+
+
+
+.card:hover .card-text {
     transform: translateY(-40px);
 }
+/* !Servizi */
+.detailing-section {
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 50px;
+    color: white;
+    background-color: #131112;
+}
 
+.text-content {
+    max-width: 30%;
+}
 
+.text-content h5 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.text-content h1 {
+    color: red;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    line-height: 1.2;
+}
+
+.text-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.text-content span{
+    color: red;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+.images-content {
+    margin-right: 0;
+    position: relative;
+    max-width: 50%;
+}
+
+.images-content img {
+    border-radius: 5px;
+}
+
+.images-content .image-top {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 50%; /* Ridotto dal 60% */
+    z-index: 0;
+}
+
+.images-content .image-bottom {
+    position: relative;
+    z-index: 1;
+    left: 20px;
+    width: 55%; /* Ridotto dal 65% */
+    margin-top: 20px; /* Margine superiore ridotto */
+}
+/* !Servizi */
 
 
 /* !MEDIA QUERY MOBILE */
@@ -168,10 +367,58 @@ html, body {
     .card-container {
         padding: 0 10px; /* Riduci il padding del container delle cards */
     }
+    .hero {
+        position: relative;
+        
+        background-image: url('/public/images/phonewallpaper.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        height: 700px;
+        display: flex;
+        align-items: end;
+        justify-content: flex-start;
+        padding: 40px;
+        overflow: hidden;
+    }
+    
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero .container {
+        position: relative;
+        z-index: 1;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 1s ease-out, opacity 1s ease-out;
+    }
+    
+    .hero .container.loaded {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    /* .hero h1 {
+        margin-right: 40px;
+        font-size: 6rem;
+        font-weight: bold;
+    }
+    
+    .hero p {
+        font-size: 3rem;
+    } */
+    
     .hero h1{
         font-size: 50px;
     }
-
+    
     .hero p{
         font-size: 20px;
     }

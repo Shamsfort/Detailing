@@ -3,19 +3,26 @@
         font-family: 'Cabin', sans-serif;
         background: url('YOUR_BACKGROUND_IMAGE_URL') no-repeat center center fixed;
         background-size: cover;
+        
     }
     .navbar {
+        position: absolute;
+        margin: 0;
+        padding: 0;
         background: transparent;
         padding: 1rem 2rem;
     }
     .navbar-brand {
         font-weight: 700;
         font-size: 40px;
-        color: #ffffff;
+        color: whitesmoke;
         pointer-events: none;
         transform: translateX(-130%);
-        animation: slideInLeft 1s forwards;
+        animation: slideInLeft 2s forwards;
     }
+    
+    
+    
     .navbar-toggler {
         border: none;
         color: white;
@@ -50,22 +57,147 @@
         position:absolute;
         left: 40%;
         transform: translateX(-50%) translateY(-100%);
-        animation: slideInDown 1s forwards;
+        animation: slideInDown 2s forwards;
         
         
         
     }
     .navbar-nav.right {
         margin-left: auto;
+        size: 20px;
+        
     }
     .dropdown-menu {
-        right: 0;
-        left: auto;
-    }
-    .dropdown-item:hover {
-        background-color: #ffc107;
+        top: 100%;
+        left: -4rem!important;
     }
     
+    div.dropdown-menu {
+        top: 100%; /* Position the dropdown below the button */
+        left: -4rem!important; /* Adjust as needed */
+        backdrop-filter: blur(8px); /* Apply blur effect to backdrop */
+        background-color: rgba(95, 95, 171, 0.7); /* Semi-transparent background color */
+        border: none;
+        border-radius: 10px; /* Optional: Rounded corners for dropdown */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Box shadow for dropdown */
+        transition: backdrop-filter 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    }
+    
+    .dropdown-item {
+        background-color: transparent; /* Transparent background for items */
+        color: #ffffff; /* Text color */
+        font-size: 18px;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+        padding: 0.5rem 1rem;
+        border-radius: 0;
+        text-transform: capitalize;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    .dropdown-item:hover {
+        background-color: rgba(44, 44, 84, 0.9); /* Darker background color on hover */
+    }
+    /*Bottone personalizzato */
+    
+    .buttonmod {
+        position: relative;
+        padding: 10px 22px;
+        border-radius: 6px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        background-color: #7d2ae8;
+        transition: all 0.2s ease;
+    }
+    
+    .buttonmod:active {
+        transform: scale(0.96);
+    }
+    
+    .buttonmod:before,
+    .buttonmod:after {
+        position: absolute;
+        content: "";
+        width: 150%;
+        left: 50%;
+        height: 100%;
+        transform: translateX(-50%);
+        z-index: -1000;
+        background-repeat: no-repeat;
+    }
+    
+    .buttonmod:hover:before {
+        top: -70%;
+        background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+        background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+        background-position: 50% 120%;
+        animation: greentopBubbles 0.6s ease;
+    }
+    
+    @keyframes greentopBubbles {
+        0% {
+            background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+        }
+        
+        50% {
+            background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+        }
+        
+        100% {
+            background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+            background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+        }
+    }
+    
+    .buttonmod:hover::after {
+        bottom: -70%;
+        background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+        background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+        background-position: 50% 0%;
+        animation: greenbottomBubbles 0.6s ease;
+    }
+    
+    @keyframes greenbottomBubbles {
+        0% {
+            background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+        }
+        
+        50% {
+            background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+        }
+        
+        100% {
+            background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+            background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+        }
+    }
+    /*Bottone personalizzato */
+    
+    
+    
+
     .button1 {
         height: 3em;
         width: 12em;
@@ -259,7 +391,7 @@
     }
     .dropdown-toggle {
         transform: translateX(100%);
-        animation: slideInRight 1s forwards;
+        animation: slideInRight 2s forwards;
     }
     
 </style>
@@ -272,22 +404,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav centered">
                 <li class="nav-item">
-                    <button class="button2" data-text="Awesome">
+                    <a class="button2" data-text="Awesome" href="{{route('preventivo')}}">
                         <span class="actual-text">&nbsp;Chiedi Preventivo&nbsp;</span>
                         <span aria-hidden="true" class="hover-text">&nbsp;Chiedi Preventivo&nbsp;</span>
-                    </button>
+                    </a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Menu
+                        <button class="buttonmod">
+                            Menu
+                        </button>
                     </a>
-                    <div class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Azione 1</a>
-                        <a class="dropdown-item" href="#">Azione 2</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Altro</a>
+                    <div class="dropdown-menu text-center " aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-white" href="#">Contattaci</a>
+                        <a class="dropdown-item text-white" href="#">Chi Siamo</a>
                     </div>
                 </li>
             </ul>
