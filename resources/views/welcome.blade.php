@@ -1,10 +1,6 @@
 
 <x-layout>
-    @if(session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-    @endif
+    
     <div id="loader">
         <div class="spinner">
             <div></div>   
@@ -24,6 +20,11 @@
         
         <div class="hero">
             <div class="container">
+                @if(session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+                @endif
                 <p>Precisione e Professionalità!</p>
                 <h1>SMARTWASH DETAILING</h1>
             </div>
@@ -36,7 +37,7 @@
             
             <div class="card" style="background-image: url({{asset('images/SMW.webp')}});">
                 <div class="card-text">
-                    <h1>Titolo 1</h1>
+                    <h1>Cura nanotech</h1>
                     <p>Testo della card 1.</p>
                 </div>
             </div>

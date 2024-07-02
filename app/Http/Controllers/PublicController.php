@@ -32,7 +32,7 @@ class PublicController extends Controller
             'corpo' => $request->input('corpo'),
         ];
 
-        Mail::to('mail@mail.it')->send(new MailPreventivoRequest($info));
+        Mail::to('h1ddenhidesf2@gmail.com')->send(new MailPreventivoRequest($info));
         return redirect('/')->with('message', 'Messaggio inviato con successo');
 
     }

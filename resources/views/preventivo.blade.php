@@ -36,6 +36,8 @@
             transition: all 0.3s ease-in-out;
         }
         
+        
+        
         .contact-container {
             display: flex;
             width: 100vw;
@@ -44,9 +46,9 @@
         }
         
         .left-col {
-            width: 45vw;
+            width: 50vw;
             height: 100%;
-            background-image: url("https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+            background-image: url("{{asset('images/evgeny-tchebotarev-aiwuLjLPFnU-unsplash.jpg')}}");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -285,7 +287,7 @@
 
 <div class="contact-container">
     <div class="left-col">
-        <img class="logo" src="https://www.indonesia.travel/content/dam/indtravelrevamp/en/logo.png"/>
+        {{-- <img class="logo" src="{{asset('')}}"/> --}}
     </div>
     <div class="right-col">
         <div class="theme-switch-wrapper">
@@ -314,7 +316,8 @@
             <input type="text" id="auto" name="auto" placeholder="Auto" required>
             <label for="userCorpo">Richiesta</label>
             <textarea rows="6" placeholder="Messaggio" id="userCorpo" name="corpo" required></textarea>
-            <button type="submit" >Send</button>
+            <button type="submit">Invia</button>
+            <a href="{{route('home')}}"><button type="button">Torna indietro</button></a>
             
         </form>
         <div id="error"></div>
