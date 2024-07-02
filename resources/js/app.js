@@ -42,3 +42,19 @@ window.addEventListener('load', () => {
     welcomeMessage.style.opacity = '1'; // Imposta l'opacità a 1 per mostrare il messaggio
     welcomeMessage.style.transform = 'translateY(0)'; // Effetto di traslazione verso l'alto per mostrare il messaggio
 });
+
+
+//Preventivo:
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+

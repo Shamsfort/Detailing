@@ -13,12 +13,18 @@
         padding: 1rem 2rem;
     }
     .navbar-brand {
-        font-weight: 700;
-        font-size: 40px;
+        
         color: whitesmoke;
         pointer-events: none;
         transform: translateX(-130%);
         animation: slideInLeft 2s forwards;
+    }
+
+    .navbar-brand img{
+        width: 80px;
+        height: 100px;
+        border-radius: 50%;
+
     }
     
     
@@ -395,9 +401,9 @@
     }
     
 </style>
-<nav class="navbar navbar-expand-lg  fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">SmartWash</a>
+        <a class="navbar-brand navbar-logo" href="{{ route('home') }}"><img src="{{asset('images/image-220x300.jpg')}}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-sliders"></i>
         </button>
