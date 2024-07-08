@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  prefix: 'tw-',
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
   ],
-  theme: {
+  theme:  { 
     extend: {
       backgroundImage: {
         'hero-pattern': "url('/public/images/trasferimento.jpeg')",
@@ -36,5 +37,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("daisyui"),
+  ],
 }

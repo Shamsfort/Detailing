@@ -1,5 +1,18 @@
+{{-- <x-layout> --}}
+    <!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset('build/assets/home.css')}}">
+    <title>@yield('title')</title>
+    {{-- link al css home.css --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body style="background-color: #131112">
+    
 
-<x-layout>
     
     <div id="loader">
         <div class="spinner">
@@ -15,14 +28,16 @@
             <div></div>    
         </div>
     </div>    
-    
-    <div id="main-content">
-        
-        <div class="hero">
-            <div class="container">
-                @if(session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
+
+    <x-navbar></x-navbar>
+
+        <div id="main-content">
+            
+            <div class="hero">
+                <div class="container">
+                    @if(session('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
                 </div>
                 @endif
                 <p>Precisione e Professionalità!</p>
@@ -33,7 +48,7 @@
         
         {{--!Cards  --}}
         <div class="fade-margin"></div>
-        <div class="card-container">
+        <div class="card-container tw-font-bold ">
             
             <div class="card" style="background-image: url({{asset('images/SMW.webp')}});">
                 <div class="card-text">
@@ -42,8 +57,8 @@
                 </div>
             </div>
             <div class="card" style="background-image: url({{asset('images/LAMBODETAILING.jpg')}});">
-                <div class="card-text">
-                    <h1>Titolo 2</h1>
+                <div class="card-text ">
+                    <h1 class="">Titolo 2</h1>
                     <p>Testo della card 2.</p>
                 </div>
             </div>
@@ -60,6 +75,10 @@
                 </div>
             </div>
         </div>
+
+
+
+        
         {{-- !Fine cards --}}
         
         {{--! SERVIZI --}}
@@ -88,11 +107,11 @@
                         .button:hover {
                             background-color: #2bac47;
                         }
-                    </style>
+                        </style>
                     <button class="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" viewBox="0 0 32 32" height="32" fill="none" class="svg-icon"><path stroke-width="2" stroke-linecap="round" stroke="#fff" fill-rule="evenodd" d="m24.8868 19.1288c-1.0274-.1308-2.036-.3815-3.0052-.7467-.7878-.29-1.6724-.1034-2.276.48-.797.8075-2.0493.9936-2.9664.3258-1.4484-1.055-2.7233-2.3295-3.7783-3.7776-.6681-.9168-.4819-2.1691.3255-2.9659.5728-.6019.7584-1.4748.4802-2.2577-.3987-.98875-.6792-2.02109-.8358-3.07557-.2043-1.03534-1.1138-1.7807-2.1694-1.77778h-3.18289c-.60654-.00074-1.18614.25037-1.60035.69334-.40152.44503-.59539 1.03943-.53345 1.63555.344 3.31056 1.47164 6.49166 3.28961 9.27986 1.64878 2.5904 3.84608 4.7872 6.43688 6.4356 2.7927 1.797 5.9636 2.9227 9.2644 3.289h.1778c.5409.0036 1.0626-.2 1.4581-.569.444-.406.6957-.9806.6935-1.5822v-3.1821c.0429-1.0763-.7171-2.0185-1.7782-2.2046z" clip-rule="evenodd"></path></svg>
                     </button>
-                    <i class="conntainer-fluid d-flex row">  +39 3737697919</i>
+                    <i class="conntainer-fluid d-flex row">  +39 999999999</i>
                 </div>
                 
                 
@@ -153,7 +172,7 @@
                 height: 100%;
                 -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
-                border: 1px solid coral;
+                border: 1px solid rgb(255, 0, 0);
                 border-radius: 1rem;
             }
             
@@ -176,17 +195,20 @@
             }
         </style>
         <div class="container">
-            <div class="row text-center">
-                <h3 style="color: red;" class="col-12 display-2">Servizi</h3>
-                <p class="text-danger">Clicca per scoprire le carte</p>
+            <div class="row text-center tw-font-bold">
+                <h3 style="color: red;" class="col-12 tw-text-8xl tw-text-mono">Servizi</h3>
+                <p class="tw-text-red-600 tw-text-4xl">scopri le carte</p>
             </div>
         </div>
         {{--!Sezione CARDS SERVIZI  --}}
-        <div class="card-containers">
+
+        <div class="card-containers ">
             <div class="flip-card">
                 <div class="flip-card-inner">
+                    
                     <div class="flip-card-front">
-                        <p class="title">Nanotech</p>
+                        
+                        <p class="title">Nanotecnologie</p>
                         <p></p>
                     </div>
                     <div class="flip-card-back">
@@ -202,7 +224,9 @@
                         {{-- <p>Hover Me</p> --}}
                     </div>
                     <div class="flip-card-back">
-                        <p class="title">Trattamento lucidatura professionale</p>
+                        
+                        <p class="title">
+                            Trattamento lucidatura professionale</p>
                         <p></p>
                     </div>
                 </div>
@@ -238,11 +262,8 @@
         {{-- Testo per la sezione preventivo --}}
         
         
-        {{-- Ora Creiamo un contenitore per l'immagine di sfondo --}}
-        {{--! Stile IMG --}}
         
-        {{--! Stile IMG --}}
-        
-        {{--!Sezione Preventivo  --}}
+    
     </div>
-</x-layout>
+</body>
+{{-- </x-layout> --}}

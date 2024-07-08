@@ -1,9 +1,14 @@
-@import 'bootstrap';
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+@import 'bootstrap';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
 
 html, body {
     margin: 0;
@@ -13,7 +18,7 @@ html, body {
 }
 
 *{
-    font-family: 'Cabin';
+    font-family: 'Cabin', sans-serif;
 }
 
 /* !LOADER */
@@ -254,6 +259,8 @@ div.container2{
 }
 
 .card .card-text {
+    font-family: 'Cabin', sans-serif!important;
+    font-size: 2rem;
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -344,7 +351,15 @@ div.container2{
 
 /* !MEDIA QUERY MOBILE */
 /* Stili per dispositivi mobili */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
+
+
+
+    /* !TAILWIND */
+
+
+
+
     .navbar {
         padding: 0.5rem 1rem; /* Riduci il padding della navbar per dispositivi mobili */
     }
@@ -353,8 +368,8 @@ div.container2{
         transform: none; /* Ripristina la trasformazione del brand */
         animation: none; /* Disabilita l'animazione per il brand */
     }
-    .navbar-toggler {
-        color: black; /* Cambia il colore dell'icona del toggler */
+    .navbar-toggler{
+        color: white!important;
     }
     .navbar-nav.centered {
         left: 50%; /* Centra il menu principale */
@@ -508,6 +523,7 @@ div.container2{
     width: 55%; /* Ridotto dal 65% */
     margin-top: 20px; /* Margine superiore ridotto */
 }
-/* !Servizi */
-}
+/* !pagina di preventivo */
 
+
+}

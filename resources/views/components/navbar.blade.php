@@ -19,16 +19,12 @@
         transform: translateX(-130%);
         animation: slideInLeft 2s forwards;
     }
-
+    
     .navbar-brand img{
         width: 80px;
         height: 100px;
         border-radius: 50%;
-
     }
-    
-    
-    
     .navbar-toggler {
         border: none;
         color: white;
@@ -64,14 +60,10 @@
         left: 40%;
         transform: translateX(-50%) translateY(-100%);
         animation: slideInDown 2s forwards;
-        
-        
-        
     }
     .navbar-nav.right {
         margin-left: auto;
         size: 20px;
-        
     }
     .dropdown-menu {
         top: 100%;
@@ -82,7 +74,7 @@
         top: 100%; /* Position the dropdown below the button */
         left: -4rem!important; /* Adjust as needed */
         backdrop-filter: blur(8px); /* Apply blur effect to backdrop */
-        background-color: rgba(95, 95, 171, 0.7); /* Semi-transparent background color */
+        background-color: rgba(255, 255, 255, 0.304); /* Semi-transparent background color */
         border: none;
         border-radius: 10px; /* Optional: Rounded corners for dropdown */
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Box shadow for dropdown */
@@ -102,10 +94,9 @@
     }
     
     .dropdown-item:hover {
-        background-color: rgba(44, 44, 84, 0.9); /* Darker background color on hover */
+        background-color: rgb(101, 101, 101); /* Darker background color on hover */
     }
     /*Bottone personalizzato */
-    
     .buttonmod {
         position: relative;
         padding: 10px 22px;
@@ -113,7 +104,7 @@
         border: none;
         color: #fff;
         cursor: pointer;
-        background-color: #7d2ae8;
+        background-color: transparent;
         transition: all 0.2s ease;
     }
     
@@ -203,7 +194,7 @@
     
     
     
-
+    
     .button1 {
         height: 3em;
         width: 12em;
@@ -400,13 +391,170 @@
         animation: slideInRight 2s forwards;
     }
     
+    
+    .dropdown-toggle:after{
+        display: none;
+        margin-left: none;
+        vertical-align: none ;
+        
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+    }
+    
+
+
+
+
+    .menu {
+                            font-size: 16px;
+                            line-height: 1.6;
+                            color: #ffffff;
+                            width: fit-content;
+                            display: flex;
+                            list-style: none;
+                        }
+                        
+                        .menu a {
+                            text-decoration: none;
+                            color: inherit;
+                            font-family: inherit;
+                            font-size: inherit;
+                            line-height: inherit;
+                        }
+                        
+                        .menu .link {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 12px;
+                            padding: 12px 36px;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+                        }
+                        
+                        .menu .link::after {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgb(255, 255, 255,0.5);
+                            z-index: -1;
+                            transform: scaleX(0);
+                            transform-origin: left;
+                            transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+                        }
+                        
+                        .menu .link svg {
+                            width: 14px;
+                            height: 14px;
+                            fill: #ffffff;
+                            transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+                        }
+                        
+                        .menu .item {
+                            position: relative;
+                        }
+                        
+                        .menu .item .submenu {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            position: absolute;
+                            top: 100%;
+                            border-radius: 0 0 16px 16px;
+                            left: 0;
+                            width: 100%;
+                            overflow: hidden;
+                            border: 1px solid #cccccc;
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateY(-12px);
+                            transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+                            z-index: 1;
+                            pointer-events: none;
+                            list-style: none;
+                        }
+                        
+                        .menu .item:hover .submenu {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateY(0);
+                            pointer-events: auto;
+                            border-top: transparent;
+                            border-color: #ffffff;
+                        }
+                        
+                        .menu .item:hover .link {
+                            color: #ffffff;
+                            border-radius: 16px 16px 0 0;
+                        }
+                        
+                        .menu .item:hover .link::after {
+                            transform: scaleX(1);
+                            transform-origin: right;
+                        }
+                        
+                        .menu .item:hover .link svg {
+                            fill: #ffffff;
+                            transform: rotate(-180deg);
+                        }
+                        
+                        .submenu .submenu-item {
+                            width: 100%;
+                            transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+                        }
+                        
+                        .submenu .submenu-link {
+                            display: block;
+                            padding: 12px 24px;
+                            width: 100%;
+                            position: relative;
+                            text-align: center;
+                            transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+                        }
+                        
+                        .submenu .submenu-item:last-child .submenu-link {
+                            border-bottom: none;
+                        }
+                        
+                        .submenu .submenu-link::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            transform: scaleX(0);
+                            width: 100%;
+                            height: 100%;
+                            background-color: #959595;
+                            z-index: -1;
+                            transform-origin: left;
+                            transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+                        }
+                        
+                        .submenu .submenu-link:hover:before {
+                            transform: scaleX(1);
+                            transform-origin: right;
+                        }
+                        
+                        .submenu .submenu-link:hover {
+                            color: #ffffff;
+                        }
+                        
 </style>
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand navbar-logo" href="{{ route('home') }}"><img src="{{asset('images/image-220x300.jpg')}}" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-sliders"></i>
-        </button>
+        <a class="navbar-brand navbar-logo" href="{{ route('home') }}"><img src=" {{asset('images/image-220x300.jpg')}} " alt=""></a>
+        
+        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-sliders"></i>
+        </button> --}}
+        
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav centered">
                 <li class="nav-item">
@@ -416,17 +564,51 @@
                     </a>
                 </li>
             </ul>
+                    
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <button class="buttonmod">
-                            Menu
-                        </button>
+                    <div class="menu">
+                        <div class="item">
+                            <a href="#" class="link">
+                                <span class="text-white">I Nostri Servizi</span>
+                                <svg viewBox="0 0 360 360" xml:space="preserve">
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path
+                                            id="XMLID_225_"
+                                            d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="submenu">
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link">Lavaggio</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link">Nanotecnologie</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link">Wrapping</a>
+                                </div>
+                                <div class="submenu-item">
+                                    <a href="#" class="submenu-link">Vieni a trovarci</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+{{-- ?Menu Servizi --}}
+
+                    {{-- <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
                     </a>
-                    <div class="dropdown-menu text-center " aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item text-white" href="#">Contattaci</a>
                         <a class="dropdown-item text-white" href="#">Chi Siamo</a>
-                    </div>
+                        <div class="dropdown-divider"></div> <!-- Aggiungi una linea divisoria -->
+                        
+                        
+                    </div> --}}
                 </li>
             </ul>
         </div>
